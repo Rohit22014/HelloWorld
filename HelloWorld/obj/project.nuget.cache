@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "hhVj3Em9pENQAzpm56O8l336rBheFbAiyBjLfgzpPQy+hU36zeu4ZzeVXv9u+lMqkkNZs17TMJkInbbl77XwZA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\rohit\\Downloads\\assignment-03-18498534\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rohit\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\rohit\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\rohit\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.8\\microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512",
+    "C:\\Users\\rohit\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.9\\microsoft.netcore.app.host.win-x64.3.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}

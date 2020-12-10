@@ -1,0 +1,137 @@
+@startuml
+skinparam classAttributeIconSize 0
+Program +-- Canvas
+Canvas --* AddShapeCommand
+Canvas *-- Shape
+Canvas --* DeleteShapeCommand
+Command <|-- AddShapeCommand
+Command <|-- DeleteShapeCommand
+Circle --|> Shape
+Rectangle --|> Shape
+Polygon --|> Shape
+Polyline --|> Shape
+Ellipse --|> Shape
+Line --|> Shape
+Path --|> Shape
+AddShapeCommand *-- Shape
+DeleteShapeCommand *-- Shape
+
+Class Program {
++ ToString (): string
+}
+
+Class Canvas {
+{field} - canvas: Stack<Shape> = new Stack <Shape>()
+{method} + Add (s: Shape)
+{method} + Remove (): Shape
+{method} + <create> Canvas ()
+{method} + Createfile ()
+}
+
+Class Command {
+{method} + Do ()
+{method} + Undo ()
+}
+
+Class Shape {
+{method} + ToString (): string
+}
+
+Class AddShapeCommand {
+{field} shape: Shape
+{field} canvas: Canvas
+{method} + <create> AddShapeCommand (s: Shape, c: Canvas)
+{method} + Do ()
+{method} + Undo()
+}
+
+Class DeleteShapeCommand {
+{field} shape: Shape
+{field} canvas: Canvas
+{method} + <create> AddShapeCommand (s: Shape, c: Canvas)
+{method} + Do ()
+{method} + Undo()
+}
+
+Class Circle {
+{field} + <property> X: int
+{field} + <property> Y: int
+{field} + <property> R: int
+{method} + <create> Circle(x: int, y: int, r: int)
+{method} + ToString (): string
+}
+
+Class Polygon {
+{field} + <property> P1: int
+{field} + <property> P2: int
+{field} + <property> P3: int
+{field} + <property> P4: int
+{field} + <property> P5: int
+{field} + <property> P6: int
+{method} + <create> Polygon(p1: int, p2: int, p3: int, p4: int, p5 : int, p6: int)
+{method} + ToString (): string
+}
+
+Class Polyline {
+{field} + <property> P1: int
+{field} + <property> P2: int
+{field} + <property> P3: int
+{field} + <property> P4: int
+{field} + <property> P5: int
+{field} + <property> P6: int
+{method} + <create> Polyline(p1: int, p2: int, p3: int, p4: int, p5 : int, p6: int)
+{method} + ToString (): string
+}
+
+Class Rectangle {
+{field} + <property> Height: int
+{field} + <property> Width: int
+{field} + <property> RX: int
+{field} + <property> RY: int
+{method} + <create> Rectangle(Height: int, Width: int, RX: int, RY: int)
+{method} + ToString (): string
+}
+
+Class Ellipse {
+{field} + <property> CX: int
+{field} + <property> CY: int
+{field} + <property> RX: int
+{field} + <property> RY: int
+{method} + <create> Ellipse(CX: int, CY: int, RX: int, RY: int)
+{method} + ToString (): string
+}
+
+Class Line {
+{field} + <property> X1: int
+{field} + <property> Y1: int
+{field} + <property> X2: int
+{field} + <property> Y2: int
+{method} + <create> Line(X1: int, Y1: int, X2: int, Y2: int)
+{method} + ToString (): string
+}
+
+Class Path {
+{field} + <property> M1: int
+{field} + <property> L1: int
+{field} + <property> V1: int
+{field} + <property> H1: int
+{field} + <property> M2: int
+{field} + <property> L2: int
+{field} + <property> V2: int
+{field} + <property> H2: int
+{method} + <create> Path(M1: int, L1: int, V1: int, H1: int, M2: int, L2: int, V2: int, H2: int)
+{method} + ToString (): string
+}
+
+Class User {
+{field} - undo: Stack<Command>
+{field} - redo: Stack<Command>
+{field} + <property> UndoCount: int
+{field} + <property> RedoCount: int
+{method} + <create> User()
+{method} + Reset ()
+{method} + Action (command : Command)
+{method} Undo ()
+{method} Redo ()
+}
+@enduml
